@@ -6,7 +6,7 @@ server:
   # Disable public instance mode
   public_instance: false
   # Disable rate limiter (requires Valkey/Redis - not available on free tier)
-    limiter: false
+  limiter: false
   method: GET
   # Secret key (will be auto-generated if not set)
   secret_key: "CHANGE_THIS_SECRET_KEY_IN_PRODUCTION"
