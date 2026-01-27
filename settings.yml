@@ -5,9 +5,8 @@ use_default_settings: true
 server:
   # Disable public instance mode
   public_instance: false
-  # Enable rate limiter
-  limiter: true
-  # Use GET method
+  # Disable rate limiter (requires Valkey/Redis - not available on free tier)
+    limiter: false
   method: GET
   # Secret key (will be auto-generated if not set)
   secret_key: "CHANGE_THIS_SECRET_KEY_IN_PRODUCTION"
