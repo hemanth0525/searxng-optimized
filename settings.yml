@@ -6,6 +6,9 @@ server:
   method: GET
   secret_key: ${SEARXNG_SECRET_KEY}
 
+botdetection:
+  enabled: false
+
 api:
   enabled: true
 
