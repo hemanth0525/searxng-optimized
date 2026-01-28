@@ -1,72 +1,53 @@
-# Optimized SearXNG settings for Render deployment
-# Inherit defaults and override specific settings
 use_default_settings: true
 
 server:
-  # Disable public instance mode
   public_instance: false
-  # Disable rate limiter (requires Valkey/Redis - not available on free tier)
-  limiter: false
+  limiter: false   # enforced in client
   method: GET
-  # Secret key (will be auto-generated if not set)
-  secret_key: "CHANGE_THIS_SECRET_KEY_IN_PRODUCTION"
+  secret_key: ${SEARXNG_SECRET_KEY}
 
-# Engine configuration - disable unnecessary engines
 engines:
-  # Keep only essential search engines
+  # Core discovery engines
   - name: brave
     disabled: false
-    
+
   - name: duckduckgo
     disabled: false
-    
+
   - name: bing
     disabled: false
-    
-  - name: startpage
+
+  # News engines (IMPORTANT)
+  - name: google news
     disabled: false
 
-  # Disable image search engines
+  - name: bing news
+    disabled: false
+
+  # Everything below is noise — keep disabled
   - name: bing images
     disabled: true
-    
   - name: google images
     disabled: true
-    
   - name: flickr
     disabled: true
 
-  # Disable video engines
   - name: youtube
     disabled: true
-    
   - name: vimeo
     disabled: true
 
-  # Disable shopping
   - name: amazon
     disabled: true
-    
   - name: ebay
     disabled: true
 
-  # Disable torrents
   - name: piratebay
     disabled: true
-    
   - name: 1337x
     disabled: true
 
-  # Disable maps
   - name: openstreetmap
     disabled: true
-    
   - name: google maps
-    disabled: true
-
-  # Disable news (optional - remove if you want news)
-  - name: google news
-    disabled: true
-    
-  - name: bing news
     disabled: true
