@@ -8,6 +8,11 @@ server:
 
 botdetection:
   enabled: false
+  
+search:
+  formats:
+    - html
+    - json
 
 api:
   enabled: true
