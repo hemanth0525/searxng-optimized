@@ -6,6 +6,9 @@ server:
   method: GET
   secret_key: ${SEARXNG_SECRET_KEY}
 
+api:
+  enabled: true
+
 engines:
   # Core discovery engines
   - name: brave
